@@ -1,0 +1,22 @@
+name:                haskellbook
+version:             0.1.0.0
+#synopsis:
+#description:
+homepage:            https://github.com/nicolashery/haskellbook
+license:             BSD3
+author:              Nicolas Hery
+maintainer:          hi@nicolashery.com
+copyright:           2018 Nicolas Hery
+category:            Web
+extra-source-files:
+- README.md
+
+dependencies:
+  - base >= 4.7 && < 5
+  - containers
+
+executables:
+  haskellbook:
+    source-dirs:      src
+    main:             Main.hs
+    ghc-options:      -Wall

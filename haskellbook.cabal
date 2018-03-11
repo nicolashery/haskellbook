@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: a49cc9daa982570ce02989297690b3591617109ffe0b114c6c91d4aca70af5da
+-- hash: 4c4abbf91f7d6980e98f901365af78de836d8dcadda9876131e67f4721b4d981
 
 name:           haskellbook
 version:        0.1.0.0
@@ -36,6 +36,7 @@ executable haskellbook
       Chapter09
       Chapter10
       Chapter11
+      Chapter12
       Cipher
       Paths_haskellbook
   default-language: Haskell2010

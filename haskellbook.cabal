@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 4c4abbf91f7d6980e98f901365af78de836d8dcadda9876131e67f4721b4d981
+-- hash: bb92efdc3533bce05f334c4b3d9a4abf9ba2d627969e64acda2d18fd45c2edad
 
 name:           haskellbook
 version:        0.1.0.0
@@ -27,6 +27,8 @@ executable haskellbook
   build-depends:
       base >=4.7 && <5
     , containers
+    , random
+    , split
     , time
   other-modules:
       Chapter05
@@ -38,5 +40,6 @@ executable haskellbook
       Chapter11
       Chapter12
       Cipher
+      Hangman
       Paths_haskellbook
   default-language: Haskell2010

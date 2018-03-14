@@ -39,39 +39,43 @@ randomWord (WordList wl) = do
 randomWord' :: IO String
 randomWord' = gameWords >>= randomWord
 
-data Puzzle =
-  Puzzle String [Maybe Char] [Char]
+data Puzzle = Puzzle
+  { word :: String
+  , discovered :: [Maybe Char]
+  , guessed :: [Char]
+  }
 
 instance Show Puzzle where
-  show (Puzzle _ discovered guessed) =
-    intersperse ' ' (fmap renderPuzzleChar discovered)
-    ++ " Guessed so far: " ++ guessed
+  show p =
+    intersperse ' ' (fmap renderPuzzleChar (discovered p))
+    ++ " Guessed so far: " ++ guessed p
 
 freshPuzzle :: String -> Puzzle
-freshPuzzle word =
-  Puzzle word discovered guessed
-  where discovered = map (const Nothing) word
-        guessed = []
+freshPuzzle w = Puzzle
+  { word = w
+  , discovered = map (const Nothing) w
+  , guessed = []
+  }
 
 charInWord :: Puzzle -> Char -> Bool
-charInWord (Puzzle word _ _) c = c `elem` word
+charInWord p c = c `elem` word p
 
 alreadyGuessed :: Puzzle -> Char -> Bool
-alreadyGuessed (Puzzle _ _ guessed) c = c `elem` guessed
+alreadyGuessed p c = c `elem` guessed p
 
 renderPuzzleChar :: Maybe Char -> Char
 renderPuzzleChar Nothing = '_'
 renderPuzzleChar (Just c) = c
 
 fillInCharacter :: Puzzle -> Char -> Puzzle
-fillInCharacter (Puzzle word filledInSoFar s) c =
-  Puzzle word newFilledInSoFar (c : s)
-  where zipper guessed wordChar guessChar =
-          if wordChar == guessed
+fillInCharacter p c =
+  Puzzle (word p) newDiscovered (c : guessed p)
+  where zipper guessChar wordChar discoveredChar =
+          if wordChar == guessChar
           then Just wordChar
-          else guessChar
-        newFilledInSoFar =
-          zipWith (zipper c) word filledInSoFar
+          else discoveredChar
+        newDiscovered =
+          zipWith (zipper c) (word p) (discovered p)
 
 handleGuess :: Puzzle -> Char -> IO Puzzle
 handleGuess puzzle guess = do
@@ -88,16 +92,16 @@ handleGuess puzzle guess = do
       return (fillInCharacter puzzle guess)
 
 gameOver :: Puzzle -> IO ()
-gameOver (Puzzle wordToGuess _ guessed) =
-  if (length guessed) > 7 then
+gameOver p =
+  if length (guessed p) > 7 then
     do putStrLn "You lose!"
-       putStrLn $ "The word was: " ++ wordToGuess
+       putStrLn $ "The word was: " ++ (word p)
        exitSuccess
   else return ()
 
 gameWin :: Puzzle -> IO ()
-gameWin (Puzzle _ filledInSoFar _) =
-  if all isJust filledInSoFar then
+gameWin p =
+  if all isJust (discovered p) then
     do putStrLn "You win!"
        exitSuccess
     else return ()
@@ -115,6 +119,6 @@ runGame puzzle = forever $ do
 
 main :: IO ()
 main = do
-  word <- randomWord'
-  let puzzle = freshPuzzle (fmap toLower word)
+  w <- randomWord'
+  let puzzle = freshPuzzle (fmap toLower w)
   runGame puzzle

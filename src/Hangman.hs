@@ -3,7 +3,7 @@ module Hangman where
 import Control.Monad (forever)
 import Data.Char (toLower)
 import Data.List (intersperse)
-import Data.Maybe (isJust)
+import Data.Maybe (catMaybes, isJust)
 import System.Exit (exitSuccess)
 import System.Random (randomRIO)
 
@@ -63,6 +63,15 @@ charInWord p c = c `elem` word p
 alreadyGuessed :: Puzzle -> Char -> Bool
 alreadyGuessed p c = c `elem` guessed p
 
+correctlyGuessed :: Puzzle -> [Char]
+correctlyGuessed p = catMaybes (discovered p)
+
+incorrectlyGuessed :: Puzzle -> [Char]
+incorrectlyGuessed p =
+  filter (not . isCorrectGuess) (guessed p)
+  where isCorrectGuess c =
+          c `elem` correctlyGuessed p
+
 renderPuzzleChar :: Maybe Char -> Char
 renderPuzzleChar Nothing = '_'
 renderPuzzleChar (Just c) = c
@@ -93,7 +102,7 @@ handleGuess puzzle guess = do
 
 gameOver :: Puzzle -> IO ()
 gameOver p =
-  if length (guessed p) > 7 then
+  if length (incorrectlyGuessed p) > 4 then
     do putStrLn "You lose!"
        putStrLn $ "The word was: " ++ (word p)
        exitSuccess

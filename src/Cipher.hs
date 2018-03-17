@@ -1,6 +1,40 @@
 module Cipher where
 
+import Control.Monad (forever)
 import Data.Char (chr, ord)
+import System.Exit (exitSuccess)
+
+main :: IO ()
+main = forever $ do
+  let caesarShift = 5
+  let vigenereKeyword = "penguin"
+  putStrLn "1. Caesar (encode)"
+  putStrLn "2. Caesar (decode)"
+  putStrLn "3. Vigenère (encode)"
+  putStrLn "4. Vigenère (decode)"
+  putStrLn "0. Exit"
+  putStr "Chose an option: "
+  option <- getLine
+  case option of
+    "1" -> do
+      message <- promptMessage
+      putStrLn $ "Encoded message: " ++ caesar caesarShift message
+    "2" -> do
+      message <- promptMessage
+      putStrLn $ "Decoded message: " ++ unCaesar caesarShift message
+    "3" -> do
+      message <- promptMessage
+      putStrLn $ "Encoded message: " ++ vigenere vigenereKeyword message
+    "4" -> do
+      message <- promptMessage
+      putStrLn $ "Decoded message: " ++ unVigenere vigenereKeyword message
+    "0" -> exitSuccess
+    _ -> putStrLn "Must pick a number"
+
+promptMessage :: IO String
+promptMessage = do
+  putStr "Enter message: "
+  getLine
 
 caesar :: Int -> String -> String
 caesar shiftBy = map (shiftLetter shiftBy)

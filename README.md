@@ -12,8 +12,14 @@ Clone this repository then build the project with:
 make build
 ```
 
-Open GHCI with
+Open GHCI with:
 
 ```
 make ghci
+```
+
+Run tests with:
+
+```
+make test
 ```

@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: d6b7eeebcc3fe96685a13796e124f40bea477cac2f2b1301896a5f202d521dfb
+-- hash: 2fe957a9e4868a42b7c5271b4ee52609152bec16f4ac043bab7546a713e9333d
 
 name:           haskellbook
 version:        0.1.0.0
@@ -18,6 +18,34 @@ cabal-version:  >= 1.10
 
 extra-source-files:
     README.md
+
+library
+  hs-source-dirs:
+      src
+  ghc-options: -Wall
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , random
+    , split
+    , time
+  exposed-modules:
+      Chapter05
+      Chapter06
+      Chapter07
+      Chapter08
+      Chapter09
+      Chapter10
+      Chapter11
+      Chapter12
+      Chapter13
+      Chapter14
+      Cipher
+      Hangman
+      Main
+  other-modules:
+      Paths_haskellbook
+  default-language: Haskell2010
 
 executable haskellbook
   main-is: Main.hs
@@ -40,7 +68,41 @@ executable haskellbook
       Chapter11
       Chapter12
       Chapter13
+      Chapter14
       Cipher
       Hangman
+      Paths_haskellbook
+  default-language: Haskell2010
+
+test-suite spec
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  hs-source-dirs:
+      src
+      test
+  ghc-options: -Wall
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+    , containers
+    , hspec
+    , random
+    , split
+    , time
+  other-modules:
+      Chapter05
+      Chapter06
+      Chapter07
+      Chapter08
+      Chapter09
+      Chapter10
+      Chapter11
+      Chapter12
+      Chapter13
+      Chapter14
+      Cipher
+      Hangman
+      Main
+      Chapter08Spec
       Paths_haskellbook
   default-language: Haskell2010

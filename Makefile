@@ -22,6 +22,10 @@ lint:
 ghci:
 	stack ghci --with-ghc intero
 
+.PHONY: ghci-test
+ghci-test:
+	stack ghci haskellbook:spec --with-ghc intero
+
 .PHONY: run
 run:
 	stack exec haskellbook

@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 2fe957a9e4868a42b7c5271b4ee52609152bec16f4ac043bab7546a713e9333d
+-- hash: 9991ec38b3ed55f54ed4b1034f7d3cf2894b822253b7e6c1826ddd1845778493
 
 name:           haskellbook
 version:        0.1.0.0
@@ -104,5 +104,9 @@ test-suite spec
       Hangman
       Main
       Chapter08Spec
+      Chapter11Spec
+      Chapter14Spec
+      CipherSpec
+      HangmanSpec
       Paths_haskellbook
   default-language: Haskell2010

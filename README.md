@@ -23,3 +23,11 @@ Run tests with:
 ```
 make test
 ```
+
+To run, or work on, a single spec:
+
+```
+make ghci-test
+> :l Chapter14Spec
+> hspec spec
+```

@@ -43,7 +43,7 @@ data Puzzle = Puzzle
   { word :: String
   , discovered :: [Maybe Char]
   , guessed :: [Char]
-  }
+  } deriving (Eq)
 
 instance Show Puzzle where
   show p =

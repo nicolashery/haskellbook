@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 9991ec38b3ed55f54ed4b1034f7d3cf2894b822253b7e6c1826ddd1845778493
+-- hash: df7559be998011bd7f57ae781dee2de4152fb089d7e8d57ef173d8c983157ac5
 
 name:           haskellbook
 version:        0.1.0.0
@@ -24,7 +24,8 @@ library
       src
   ghc-options: -Wall
   build-depends:
-      base >=4.7 && <5
+      QuickCheck
+    , base >=4.7 && <5
     , containers
     , random
     , split
@@ -40,6 +41,7 @@ library
       Chapter12
       Chapter13
       Chapter14
+      Chapter15
       Cipher
       Hangman
       Main
@@ -53,7 +55,8 @@ executable haskellbook
       src
   ghc-options: -Wall
   build-depends:
-      base >=4.7 && <5
+      QuickCheck
+    , base >=4.7 && <5
     , containers
     , random
     , split
@@ -69,6 +72,7 @@ executable haskellbook
       Chapter12
       Chapter13
       Chapter14
+      Chapter15
       Cipher
       Hangman
       Paths_haskellbook
@@ -100,12 +104,14 @@ test-suite spec
       Chapter12
       Chapter13
       Chapter14
+      Chapter15
       Cipher
       Hangman
       Main
       Chapter08Spec
       Chapter11Spec
       Chapter14Spec
+      Chapter15Spec
       CipherSpec
       HangmanSpec
       Paths_haskellbook

@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: e52a53337d8027e91b86022138c71a9689db2c729a40f34b827721dcb419fe88
+-- hash: 024458799460fc7636919179563441f769464357eb5ca66f5459b082f1a63867
 
 name:           haskellbook
 version:        0.1.0.0
@@ -26,6 +26,7 @@ library
   build-depends:
       QuickCheck
     , base >=4.7 && <5
+    , checkers
     , containers
     , random
     , split
@@ -43,6 +44,7 @@ library
       Chapter14
       Chapter15
       Chapter16
+      Chapter17
       Cipher
       Hangman
       Main
@@ -58,6 +60,7 @@ executable haskellbook
   build-depends:
       QuickCheck
     , base >=4.7 && <5
+    , checkers
     , containers
     , random
     , split
@@ -75,6 +78,7 @@ executable haskellbook
       Chapter14
       Chapter15
       Chapter16
+      Chapter17
       Cipher
       Hangman
       Paths_haskellbook
@@ -90,8 +94,10 @@ test-suite spec
   build-depends:
       QuickCheck
     , base >=4.7 && <5
+    , checkers
     , containers
     , hspec
+    , hspec-checkers
     , random
     , split
     , time
@@ -108,6 +114,7 @@ test-suite spec
       Chapter14
       Chapter15
       Chapter16
+      Chapter17
       Cipher
       Hangman
       Main
@@ -116,6 +123,7 @@ test-suite spec
       Chapter14Spec
       Chapter15Spec
       Chapter16Spec
+      Chapter17Spec
       CipherSpec
       HangmanSpec
       Paths_haskellbook

@@ -13,6 +13,7 @@ ghc-options: -Wall
 
 dependencies:
   - base >= 4.7 && < 5
+  - checkers
   - containers
   - QuickCheck
   - random
@@ -35,3 +36,4 @@ tests:
       - test
     dependencies:
       - hspec
+      - hspec-checkers

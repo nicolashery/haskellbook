@@ -4,7 +4,7 @@ all: setup build test lint
 setup:
 	stack setup
 	stack build --dependencies-only --test --no-run-tests
-	stack install hlint intero
+	stack install hlint stylish-haskell
 
 .PHONY: build
 build:
@@ -20,11 +20,11 @@ lint:
 
 .PHONY: ghci
 ghci:
-	stack ghci --with-ghc intero
+	stack ghci
 
 .PHONY: ghci-test
 ghci-test:
-	stack ghci haskellbook:spec --with-ghc intero
+	stack ghci haskellbook:spec
 
 .PHONY: run
 run:

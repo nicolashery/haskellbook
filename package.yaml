@@ -18,6 +18,7 @@ dependencies:
   - QuickCheck
   - random
   - time
+  - transformers
   - split
 
 library:

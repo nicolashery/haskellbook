@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 3266572214be0305eda85f9e861275f707fc0a5b1e98c3b43c994c290e76bda4
+-- hash: a6f2e3b0da0f1c4d63a5660e89a70d41b35ea42f49c1bb546112c7b8dd369a05
 
 name:           haskellbook
 version:        0.1.0.0
@@ -31,6 +31,7 @@ library
     , random
     , split
     , time
+    , transformers
   exposed-modules:
       Chapter05
       Chapter06
@@ -49,6 +50,7 @@ library
       Chapter20
       Chapter21
       Chapter22
+      Chapter23
       Cipher
       Hangman
       Main
@@ -69,6 +71,7 @@ executable haskellbook
     , random
     , split
     , time
+    , transformers
   other-modules:
       Chapter05
       Chapter06
@@ -87,6 +90,7 @@ executable haskellbook
       Chapter20
       Chapter21
       Chapter22
+      Chapter23
       Cipher
       Hangman
       Paths_haskellbook
@@ -109,6 +113,7 @@ test-suite spec
     , random
     , split
     , time
+    , transformers
   other-modules:
       Chapter05
       Chapter06
@@ -127,6 +132,7 @@ test-suite spec
       Chapter20
       Chapter21
       Chapter22
+      Chapter23
       Cipher
       Hangman
       Main

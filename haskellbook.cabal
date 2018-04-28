@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: a6f2e3b0da0f1c4d63a5660e89a70d41b35ea42f49c1bb546112c7b8dd369a05
+-- hash: a743dca97467310f8aa50c6130bbd54266114c875771aa95643bdd2ea8f05025
 
 name:           haskellbook
 version:        0.1.0.0
@@ -28,10 +28,12 @@ library
     , base >=4.7 && <5
     , checkers
     , containers
+    , parsers
     , random
     , split
     , time
     , transformers
+    , trifecta
   exposed-modules:
       Chapter05
       Chapter06
@@ -51,9 +53,9 @@ library
       Chapter21
       Chapter22
       Chapter23
+      Chapter24
       Cipher
       Hangman
-      Main
   other-modules:
       Paths_haskellbook
   default-language: Haskell2010
@@ -61,38 +63,20 @@ library
 executable haskellbook
   main-is: Main.hs
   hs-source-dirs:
-      src
+      bin
   ghc-options: -Wall
   build-depends:
       QuickCheck
     , base >=4.7 && <5
     , checkers
     , containers
+    , parsers
     , random
     , split
     , time
     , transformers
+    , trifecta
   other-modules:
-      Chapter05
-      Chapter06
-      Chapter07
-      Chapter08
-      Chapter09
-      Chapter10
-      Chapter11
-      Chapter12
-      Chapter13
-      Chapter14
-      Chapter15
-      Chapter16
-      Chapter17
-      Chapter18
-      Chapter20
-      Chapter21
-      Chapter22
-      Chapter23
-      Cipher
-      Hangman
       Paths_haskellbook
   default-language: Haskell2010
 
@@ -110,10 +94,12 @@ test-suite spec
     , containers
     , hspec
     , hspec-checkers
+    , parsers
     , random
     , split
     , time
     , transformers
+    , trifecta
   other-modules:
       Chapter05
       Chapter06
@@ -133,9 +119,9 @@ test-suite spec
       Chapter21
       Chapter22
       Chapter23
+      Chapter24
       Cipher
       Hangman
-      Main
       Chapter08Spec
       Chapter11Spec
       Chapter14Spec
@@ -144,6 +130,7 @@ test-suite spec
       Chapter17Spec
       Chapter18Spec
       Chapter21Spec
+      Chapter24Spec
       CipherSpec
       HangmanSpec
       Paths_haskellbook

@@ -15,10 +15,12 @@ dependencies:
   - base >= 4.7 && < 5
   - checkers
   - containers
+  - parsers
   - QuickCheck
   - random
   - time
   - transformers
+  - trifecta
   - split
 
 library:
@@ -26,7 +28,7 @@ library:
 
 executables:
   haskellbook:
-    source-dirs: src
+    source-dirs: bin
     main: Main.hs
 
 tests:

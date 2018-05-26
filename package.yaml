@@ -18,9 +18,11 @@ dependencies:
   - parsers
   - QuickCheck
   - random
+  - text
   - time
   - transformers
   - trifecta
+  - scotty
   - split
 
 library:

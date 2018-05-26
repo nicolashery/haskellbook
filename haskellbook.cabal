@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: a743dca97467310f8aa50c6130bbd54266114c875771aa95643bdd2ea8f05025
+-- hash: 120c9ab43f7cf5590db797fab949caa39ec28c1ba8e7fc530af7780f94e5d266
 
 name:           haskellbook
 version:        0.1.0.0
@@ -30,7 +30,9 @@ library
     , containers
     , parsers
     , random
+    , scotty
     , split
+    , text
     , time
     , transformers
     , trifecta
@@ -54,8 +56,12 @@ library
       Chapter22
       Chapter23
       Chapter24
+      Chapter25
+      Chapter26
       Cipher
       Hangman
+      HitCounter
+      Morra
   other-modules:
       Paths_haskellbook
   default-language: Haskell2010
@@ -72,7 +78,9 @@ executable haskellbook
     , containers
     , parsers
     , random
+    , scotty
     , split
+    , text
     , time
     , transformers
     , trifecta
@@ -96,7 +104,9 @@ test-suite spec
     , hspec-checkers
     , parsers
     , random
+    , scotty
     , split
+    , text
     , time
     , transformers
     , trifecta
@@ -120,8 +130,12 @@ test-suite spec
       Chapter22
       Chapter23
       Chapter24
+      Chapter25
+      Chapter26
       Cipher
       Hangman
+      HitCounter
+      Morra
       Chapter08Spec
       Chapter11Spec
       Chapter14Spec

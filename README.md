@@ -31,3 +31,9 @@ make ghci-test
 > :l Chapter14Spec
 > hspec spec
 ```
+
+Run benchmarks with:
+
+```
+make bench
+```

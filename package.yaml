@@ -24,6 +24,7 @@ dependencies:
   - trifecta
   - scotty
   - split
+  - vector
 
 library:
   source-dirs: src
@@ -32,6 +33,15 @@ executables:
   haskellbook:
     source-dirs: bin
     main: Main.hs
+
+benchmarks:
+  haskellbook-benchmarks:
+    source-dirs:
+      - src
+      - benchmark
+    main: Main.hs
+    dependencies:
+      - criterion
 
 tests:
   spec:

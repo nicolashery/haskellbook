@@ -31,7 +31,9 @@ library:
 
 executables:
   haskellbook:
-    source-dirs: bin
+    source-dirs:
+      - src
+      - bin
     main: Main.hs
 
 benchmarks:

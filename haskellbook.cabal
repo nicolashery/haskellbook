@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: c11e3999a118d5c2c4edb20808d21dbd9a1252c90830e240c3ae3a5efd815aa9
+-- hash: 3c54369f3a99543c2fcd0e73b8f578de0759a2c4478e997209efc7a4475ad52a
 
 name:           haskellbook
 version:        0.1.0.0
@@ -60,6 +60,7 @@ library
       Chapter25
       Chapter26
       Chapter28
+      Chapter29
       Cipher
       Hangman
       HitCounter
@@ -71,6 +72,7 @@ library
 executable haskellbook
   main-is: Main.hs
   hs-source-dirs:
+      src
       bin
   ghc-options: -Wall
   build-depends:
@@ -88,6 +90,33 @@ executable haskellbook
     , trifecta
     , vector
   other-modules:
+      Chapter05
+      Chapter06
+      Chapter07
+      Chapter08
+      Chapter09
+      Chapter10
+      Chapter11
+      Chapter12
+      Chapter13
+      Chapter14
+      Chapter15
+      Chapter16
+      Chapter17
+      Chapter18
+      Chapter20
+      Chapter21
+      Chapter22
+      Chapter23
+      Chapter24
+      Chapter25
+      Chapter26
+      Chapter28
+      Chapter29
+      Cipher
+      Hangman
+      HitCounter
+      Morra
       Paths_haskellbook
   default-language: Haskell2010
 
@@ -137,6 +166,7 @@ test-suite spec
       Chapter25
       Chapter26
       Chapter28
+      Chapter29
       Cipher
       Hangman
       HitCounter
@@ -201,6 +231,7 @@ benchmark haskellbook-benchmarks
       Chapter25
       Chapter26
       Chapter28
+      Chapter29
       Cipher
       Hangman
       HitCounter
